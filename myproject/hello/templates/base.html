@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE HTML>
+<HTML lamg="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block title_name%}
+        Зоомагазин "Хвосты и лапы" - неизвестно
+        {%endblock%}
+    </title>
+    {%block link_style%}
+    <link rel="stylesheet" href="{% static 'style\style.css' %}" />
+    {%endblock%}
+</head>
+<body class="big_container">
+{%block body%}
+    {%block header%}
+        {%include 'includes/header.html'%}
+    {%endblock%}
+    <main>
+        {%block content%}
+        <p class="header-main-text"> Кажется, эта страница пока что в разработке. Или сломана. Попытайтесь зайти на нее попозже.</p>
+        {%endblock%}
+    </main>
+    {%block footer%}
+        {%include 'includes/footer.html'%}
+    {%endblock%}
+{%endblock%}
+</body>
+</HTML>

@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title_name%}
+    Зоомагазин "Хвосты и лапы" - категории
+{%endblock%}
+{%block content%}
+    <h4 class='category-bigtext'>Категории </h4>
+    <div class='allcategories-container'>
+        {%for category in categories.all%}
+                <div class='category-box'>
+                    <p class='category-text'>{{category.Category_Name}}</p>
+                </div>
+        {% endfor %}
+    </div>
+    <h4 class='category-bigtext'>Продукты</h4>
+    <div class='allproducts-container'>
+        {%for product in products.all%}                
+        <div class='product-box'>
+            <img src="{{ product.Product_Image}}" class='product-img-container'/>
+            <p class='product-text'>{{product.Product_Name}}</p>
+        </div>
+        {% endfor %}
+{%endblock%}
