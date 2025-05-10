@@ -1,0 +1,14 @@
+.aboutus-small-container{
+    max-width: 400px;
+    margin-bottom: 5%;
+    margin-left: 25%;
+}
+
+@media  (max-width: 990px){
+    .aboutus-small-container {
+        max-width: 400px;
+        margin-bottom: 5%;
+        margin-left: 4%;
+    }
+}
+

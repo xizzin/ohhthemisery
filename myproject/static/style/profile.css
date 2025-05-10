@@ -1,0 +1,10 @@
+.profile-container{
+    margin: auto;
+    min-width: 35%;
+	max-width: 40%;
+}
+
+.profile-button{
+    margin-top: 4%;
+    margin-bottom: 7%;
+}

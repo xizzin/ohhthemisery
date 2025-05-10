@@ -1,7 +1,10 @@
 
 {%extends 'base.html'%}
 {%load static%}
-
+{%block link_style%}
+<link rel="stylesheet" href="{% static 'style\profile.css' %}" />
+<link rel="stylesheet" href="{% static 'style\style.css' %}" />
+{%endblock%}
 {%block title_name%}
     Зоомагазин "Хвосты и лапы" - профиль
 {%endblock%}
