@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from hello.models import *
 from .serializers import *
-from permissions import *
+from .permissions import *
 
 class ClientsViewset(viewsets.ModelViewSet):
     queryset = Clients.objects.all

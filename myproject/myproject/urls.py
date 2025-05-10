@@ -4,13 +4,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.urls import path, include
 from hello.views import index
-from hello.views import categories
-from hello.views import profile
-from hello.views import shopcart
-from hello.views import productpage
-from hello.views import aboutus
-from hello.views import allprojects
-from hello.views import result
+from hello.views import *
 
 app_name = 'hello'
 urlpatterns = [
@@ -24,7 +18,10 @@ urlpatterns = [
     path('aboutus.html', aboutus),
     path('allproducts_base.html', allprojects),
     path('result', result, name='result'),
-    path('api/', include('api_shop.urls'))
+    path('api/', include('api_shop.urls')),
+    path('login/', login_user, name='login_page'),
+    path('registration/', registration_user, name='registration_page'),
+    path('logout/', logout_user, name='logout_page')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

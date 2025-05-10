@@ -1,8 +1,44 @@
 from django.shortcuts import render
-from .models import Categories
-from .models import Products
-from .models import Clients
-from .forms import ClientForm
+from .models import *
+from .forms import *
+from django.contrib.auth import login, logout
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.shortcuts import redirect
+
+def login_user(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            if request.GET.get('next'):
+                return redirect(request.GET.get('next'))
+            return redirect('index')
+    else:
+        form = AuthenticationForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'auth/auth.html', context)
+
+def registration_user(request):
+    if request.method == 'POST':
+        form = RegistrationForm(data=request.POST)
+        if form.is_valid():
+            login(request, form.save())
+            if request.GET.get('next'):
+                return redirect(request.GET.get('next'))
+            return redirect('index')
+    else:
+        form = RegistrationForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'auth/registration.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')
+
 def index(request):
     return render(request, 'hello/index.html')
 

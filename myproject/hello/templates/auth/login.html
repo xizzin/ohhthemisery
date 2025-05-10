@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block title_name %}
+Auth
+{% endblock %}
+
+{% block content%}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_div}}
+        <input type="submit" value="Войти">
+    </form>
+    <a href="{%url 'registartion_page'%}" class="header-main-text-margin">Зарегистрироваться</a>
+    <a href = '/' class="header-main-text-margin">Назад</a>
+{% endblock %}
