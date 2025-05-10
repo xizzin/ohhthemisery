@@ -1,7 +1,7 @@
 from .views import *
 from rest_framework import routers
 
-urlspatterns = [
+urlpatterns = [
 
 ]
 
@@ -15,4 +15,4 @@ router.register('order_stats', OrderStatViewset, basename='orderstat')
 router.register('orders', OrdersViewset, basename='orders')
 router.register('productsinorders', ProductsInOrderViewset, basename='productsinorders')
 
-urlspatterns +=router.urls
+urlpatterns +=router.urls
